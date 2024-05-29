@@ -1,8 +1,9 @@
 package com.api.boloughapi.controller;
 
 import com.api.boloughapi.dto.HadithDto;
-import com.api.boloughapi.model.Hadith;
 import com.api.boloughapi.service.HadithService;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,12 @@ public class HadithController {
 
     public HadithController(HadithService hadithService) {
         this.hadithService = hadithService;
+    }
+
+    @PostMapping("/")
+    ResponseEntity<String> save(@RequestBody HadithDto dto){
+        hadithService.save(dto);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")

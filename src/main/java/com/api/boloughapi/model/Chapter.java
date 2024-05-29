@@ -10,23 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity @Data @AllArgsConstructor @NoArgsConstructor @Builder
+@Table(name = "chapterAr")
 public class Chapter {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String chapterTitle;
+    private String title;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "kitabId", referencedColumnName = "id")
     private Kitab kitab;
-
-    @OneToMany(mappedBy = "chapter",cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Hadith> hadiths = new ArrayList<>();
-
-
-
-
-
-
 
 
     @Override

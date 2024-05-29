@@ -1,37 +1,42 @@
 package com.api.boloughapi.mapper;
 
-import com.api.boloughapi.dto.ChapterDto;
 import com.api.boloughapi.dto.HadithDto;
-import com.api.boloughapi.model.Chapter;
 import com.api.boloughapi.model.Hadith;
+import com.api.boloughapi.model.translation.HadithTranslation;
 import org.springframework.stereotype.Component;
 
 @Component
 public class HadithMapper {
-    public static Hadith map(ChapterDto dto, Chapter chapter) {
+    public static Hadith map(HadithDto dto) {
+
+        if (dto == null){
+            return null;
+        }
 
         return Hadith.builder()
-                .hadithName(dto.getHadithName())
+                .name(dto.getName())
                 .isnaad(dto.getIsnaad())
                 .matn(dto.getMatn())
                 .takhrij(dto.getTakhrij())
-                .tahkeek(dto.getTahkeek())
-                .chapter(chapter)
+                .hamesh(dto.getHamesh())
+                .basamLink(dto.getBasamLink())
+                .san3aniLink(dto.getSan3aniLink())
+                .uthaymeenLink(dto.getUthaymeenLink())
                 .build();
     }
 
-    public HadithDto mapToDto(Hadith hadith) {
+    public HadithDto mapToDto(HadithTranslation hadith) {
 
         if (hadith == null){
             return null;
         }
 
         return HadithDto.builder()
-                .hadithName(hadith.getHadithName())
+                .name(hadith.getName())
                 .isnaad(hadith.getIsnaad())
                 .matn(hadith.getMatn())
                 .takhrij(hadith.getTakhrij())
-                .tahkeek(hadith.getTahkeek())
+                .hamesh(hadith.getHamesh())
                 .build();
         }
 }

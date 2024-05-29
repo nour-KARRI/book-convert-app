@@ -6,17 +6,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity @Data @AllArgsConstructor @NoArgsConstructor @Builder
-@Table(name = "kitabAr")
-public class Kitab {
+public class Language {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String audio;
-    private String title;
-    @OneToMany(mappedBy = "kitab", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Chapter> chapters = new ArrayList<>();
+    private String code;
+    private String name;
 }

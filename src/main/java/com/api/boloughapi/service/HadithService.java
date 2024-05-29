@@ -2,21 +2,37 @@ package com.api.boloughapi.service;
 
 import com.api.boloughapi.dto.HadithDto;
 import com.api.boloughapi.mapper.HadithMapper;
+import com.api.boloughapi.model.Chapter;
+import com.api.boloughapi.model.Hadith;
+import com.api.boloughapi.repository.ChapterRepository;
 import com.api.boloughapi.repository.HadithRepository;
+import com.api.boloughapi.repository.HadithTranslationRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class HadithService {
 
-    private HadithRepository hadithRepository;
+    private HadithTranslationRepository hadithTranslationRepository;
     private HadithMapper hadithMapper;
+    private HadithRepository hadithRepository;
+    private ChapterRepository chapterRepository;
 
-    public HadithService(HadithRepository hadithRepository, HadithMapper hadithMapper) {
-        this.hadithRepository = hadithRepository;
+    public HadithService(HadithTranslationRepository hadithTranslationRepository, HadithMapper hadithMapper, HadithRepository hadithRepository, ChapterRepository chapterRepository) {
+        this.hadithTranslationRepository = hadithTranslationRepository;
         this.hadithMapper = hadithMapper;
+        this.hadithRepository = hadithRepository;
+        this.chapterRepository = chapterRepository;
     }
 
     public HadithDto getHadith(Long id) {
-        return hadithMapper.mapToDto(hadithRepository.findById(id).orElse(null));
+        return hadithMapper.mapToDto(hadithTranslationRepository.findById(id).orElse(null));
+    }
+
+    public void save(HadithDto dto) {
+        Chapter chapter = chapterRepository.findById(1L).orElse(null);
+
+        Hadith hadith = HadithMapper.map(dto);
+        hadith.setChapter(chapter);
+        hadithRepository.save(hadith);
     }
 }
