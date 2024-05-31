@@ -1,6 +1,7 @@
 package com.api.boloughapi.service;
 
 import com.api.boloughapi.dto.HadithTransDto;
+import com.api.boloughapi.dto.HadithTranslationDto;
 import com.api.boloughapi.model.Hadith;
 import com.api.boloughapi.model.Language;
 import com.api.boloughapi.model.translation.HadithTranslation;
@@ -23,8 +24,8 @@ public class TranslationService {
 		this.hadithRepository = hadithRepository;
 	}
 
-	public void save(HadithTransDto dto) {
-		Language language = languageRepository.findByCode(dto.getLangCode()).orElse(null);
+	public void save(HadithTransDto dto, String lang) {
+		Language language = languageRepository.findByCode(lang).orElse(null);
 		Hadith hadith = hadithRepository.findById(1L).orElse(null);
 
 		HadithTranslation hadithTranslation = HadithTranslation.builder()
@@ -36,7 +37,21 @@ public class TranslationService {
 				.hamesh(dto.getHamesh())
 				.hadith(hadith)
 				.build();
-
 		translationRepository.save(hadithTranslation);
+	}
+
+	public HadithTranslationDto getHadithTranslation(Long id, String lang) {
+
+		HadithTranslation hadith = translationRepository.findByIdAndLanguageCode(id, lang).orElse(null);
+
+		return	HadithTranslationDto.builder()
+				.id(hadith.getId())
+				.langCode(hadith.getLanguage().getCode())
+				.name(hadith.getName())
+				.isnaad(hadith.getIsnaad())
+				.matn(hadith.getMatn())
+				.takhrij(hadith.getTakhrij())
+				.hamesh(hadith.getHamesh())
+				.build();
 	}
 }

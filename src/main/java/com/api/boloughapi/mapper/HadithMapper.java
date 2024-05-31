@@ -25,7 +25,7 @@ public class HadithMapper {
                 .build();
     }
 
-    public HadithDto mapToDto(HadithTranslation hadith) {
+    public HadithDto mapToDto(Hadith hadith) {
 
         if (hadith == null){
             return null;
@@ -37,6 +37,9 @@ public class HadithMapper {
                 .matn(hadith.getMatn())
                 .takhrij(hadith.getTakhrij())
                 .hamesh(hadith.getHamesh())
+                .basamLink(hadith.getBasamLink())
+                .san3aniLink(hadith.getSan3aniLink())
+                .uthaymeenLink(hadith.getUthaymeenLink())
                 .build();
         }
 }

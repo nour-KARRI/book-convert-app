@@ -25,7 +25,7 @@ public class HadithService {
     }
 
     public HadithDto getHadith(Long id) {
-        return hadithMapper.mapToDto(hadithTranslationRepository.findById(id).orElse(null));
+        return hadithMapper.mapToDto(hadithRepository.findById(id).orElse(null));
     }
 
     public void save(HadithDto dto) {
