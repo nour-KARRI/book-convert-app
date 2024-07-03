@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data @Builder
 public class HadithDto {
+    private Long id;
     private String kitab;
     private String chapter;
     private String langCode;

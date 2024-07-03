@@ -32,6 +32,7 @@ public class HadithMapper {
         }
 
         return HadithDto.builder()
+                .id(hadith.getId())
                 .name(hadith.getName())
                 .isnaad(hadith.getIsnaad())
                 .matn(hadith.getMatn())

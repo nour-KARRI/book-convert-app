@@ -41,11 +41,11 @@ public class TranslationService {
 	}
 
 	public HadithTranslationDto getHadithTranslation(Long id, String lang) {
-
-		HadithTranslation hadith = translationRepository.findByIdAndLanguageCode(id, lang).orElse(null);
+		//TODO: findByID hadith
+		HadithTranslation hadith = translationRepository.findByHadithIdAndLanguageCode(id, lang).orElse(null);
 
 		return	HadithTranslationDto.builder()
-				.id(hadith.getId())
+				.id(id)
 				.langCode(hadith.getLanguage().getCode())
 				.name(hadith.getName())
 				.isnaad(hadith.getIsnaad())
