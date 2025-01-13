@@ -19,9 +19,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin
-    container_name: pma
-    links:
-      - db-bolough
+    container_name: phpmyadmin
     environment:
       PMA_HOST: db-bolough
       PMA_PORT: 3306
