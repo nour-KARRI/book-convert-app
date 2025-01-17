@@ -1,0 +1,14 @@
+<div class="container pt-5">
+  <p>{{hadith.isnaad +" "}}<span [innerHTML]="hadith.matn"></span>{{" "+hadith.takhrij}}</p>
+    <ul>
+        <span style="color: #777;">Translation: </span>
+        <li>
+          <a (click)="getArabicHadithTranslation(hadith.id)">Arabe</a>
+        </li>
+        <li>
+          <a (click)="getFrenchHadithTranslation(hadith.id)">French</a>
+        </li>
+    </ul>
+    <hr>
+    <p>[{{hadith.hamesh}}]</p> 
+    </div>

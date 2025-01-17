@@ -1,4 +1,4 @@
-version: '3'
+
 services:
   db-bolough:
     image: mysql:5.7
@@ -11,19 +11,19 @@ services:
       MYSQL_PASSWORD: 1234
     ports:
       - "3306:3306"
+    networks:
+      - net-bolough
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     healthcheck:
       test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
       timeout: 5s
       retries: 10
+    volumes:
+      - ./volume-data/mysql:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
 
-  phpmyadmin:
-    image: phpmyadmin
-    container_name: phpmyadmin
-    environment:
-      PMA_HOST: db-bolough
-      PMA_PORT: 3306
-      PMA_ARBITRARY: 1
-    restart: always
-    ports:
-      - 7777:80
+volumes:
+  volume-data:
+networks:
+  net-bolough:
+    driver: bridge

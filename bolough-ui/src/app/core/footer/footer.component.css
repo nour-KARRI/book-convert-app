@@ -1,0 +1,10 @@
+footer{
+    bottom:0px;
+    background-color:rgb(253, 233, 236);
+    width:100%;
+    position: fixed;
+    }
+
+    a{
+        text-decoration: none;
+    }

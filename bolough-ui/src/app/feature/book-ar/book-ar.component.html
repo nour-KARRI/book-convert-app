@@ -1,0 +1,34 @@
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-sm" style="margin-top: 10px;">
+            <a routerLink="/add-content">{{'add' | translate}}</a>
+        </div>
+        <div class="col-sm" style="text-align: right;margin-top: 10px;">
+            <a routerLink="/fr" id="fr" (click)="changeLang($event)">{{ 'french' | translate}}</a>
+            <a routerLink="/en" id="en" (click)="changeLang($event)">{{ 'english' | translate}}</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <app-ar-content *ngIf="hadith" [hadith]="hadith"></app-ar-content>
+        </div>
+        <div class="col-sm" style="text-align: right;margin-top: 10px;">
+            <p style="text-align: center;font-size: 30px;">فصول الكتاب</p>
+            <a>مقدمة المؤلف</a>
+            <p>كتاب الطهارة <a href="#">سماع الكتاب</a></p>
+            <p>باب المياه</p>
+            <a (click)="gethadith(1)">طهور ماء البحر وحل ميتته</a> 
+            <br>
+            <a (click)="gethadith(2)">الماء طهور لا ينجسه شيء</a>
+            <p>إذا كان الماء قلتين</p>
+            <p>الاغتسال في الماء الدائم</p>
+            <p>اغتسال المرأة بفضل الرجل أو الرجل بفضل المرأة</p>
+            <p>نجاسة فم الكلب</p>
+            <p>طهارة الهرة وسؤرها</p>
+            <p>طهارة الأرض إذا أصابتها نجاسةماء</p>
+            <p>حل الحوت والجراد والكبد والطحال</p>
+            <p>وقوع الذباب في الطعام والشراب</p>
+            <p>طهارة ما لا دم فيه ونجاسة ما فضل من الحي</p>   
+        </div> 
+    </div>
+</div>

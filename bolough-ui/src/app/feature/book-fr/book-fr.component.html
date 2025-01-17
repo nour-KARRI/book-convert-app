@@ -1,0 +1,48 @@
+<div class="container pt-5">
+    <div style="text-align: right;margin-top: 10px;">
+        <a routerLink="/ar" id="ar" (click)="changeLang($event)">{{'arabe' | translate}}</a>
+        <a routerLink="/en" id="en" (click)="changeLang($event)">{{'english' | translate}}</a>
+    </div>
+
+<div class="row">
+    <div class="col-sm" style="text-align: left;margin-top: 10px;">
+        <p>Sommaire</p>
+
+        <p>Le Livre de la Purification</p>
+
+        
+        <p>CHAPITRE 1. Les Eaux.</p>
+
+
+        <p>CHAPITRE 2. Les Récipients.</p>
+
+
+        <p>CHAPITRE 3. Qu'est-ce que la souillure et comment l'enlever.</p>
+
+
+        <p>CHAPITRE 4. Les Ablutions.</p>
+
+
+        <p>CHAPITRE 5. Passer la main sur les KHOUFFAINS (pantoufles).</p>
+
+
+        <p>CHAPITRE 6. Causes annulant les ablutions.</p>
+
+
+        <p>CHAPITRE 7. Bienséance dans la satisfaction des besoins naturels.</p>
+
+
+        <p>CHAPITRE 8. Dispositions relatives à la grande souillure et le bain de purification.</p>
+
+
+        <p>CHAPITRE 9. Purification par le Tayammoum (ablutions sèches).</p>
+
+
+        <p>CHAPITRE 10. Les menstruations.</p>
+    </div>
+    <div class="col-sm">
+        <app-fr-content *ngIf="hadith" [hadith]="hadith"></app-fr-content>
+    </div>
+</div>
+
+</div>

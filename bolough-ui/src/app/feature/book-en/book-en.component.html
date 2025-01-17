@@ -1,0 +1,30 @@
+<div class="container pt-5">
+    <div style="text-align: right;margin-top: 10px;">
+        <a routerLink="/ar" id="ar" (click)="changeLang($event)" >{{'arabic' | translate}}</a>
+        <a routerLink="/fr" id="fr" (click)="changeLang($event)">{{'french' | translate}}</a>
+    </div>
+
+    <p>Contents</p>
+<div class="row">
+    <div class="col-sm" style="text-align: left;margin-top: 10px;font-family: Akzidenz Roman, Helvetica, Arial, sans-serif;font-size: 14px;">
+        <p>The Author's Introduction</p>
+        <p>1. The Book of Purification</p>
+        <p>Chapter!. Water</p>
+            <a (click)="gethadith(1)">Sea water</a>
+        <p>Chapter 2. Utensils</p>
+        <p>Chapter 3. The nature and cleansing of An-Najasah (impurities)</p>
+        <p>Chapter 4. Witdu' (ablution)</p>
+        <p>Chapter 5. Mash (wiping) over Kbuffain (two leather socks)</p>
+        <p>Chapter 6. The nullification of Wudu' (ablution)</p>
+        <p>Chapter 7. Manners related to answering the call of nature</p>
+        <p>Chapter 8. Ghusl (bath) and the ruling of the sexually impure person</p>
+        <p>Chapter 9. Tayammum (purification with soil)</p>
+        <p>Chapter 10. Menstruation</p>  
+    </div>
+    <div class="col-sm">
+        <app-en-content *ngIf="hadith" [hadith]="hadith"></app-en-content>
+    </div>
+    
+</div>
+
+</div>
