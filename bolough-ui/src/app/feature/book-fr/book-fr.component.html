@@ -1,0 +1,52 @@
+<div class="container pt-5">
+    <div style="text-align: right;margin-top: 10px;">
+        <a routerLink="/ar" id="ar" (click)="changeLang($event)">{{'arabe' | translate}}</a>
+        <a routerLink="/en" id="en" (click)="changeLang($event)">{{'english' | translate}}</a>
+    </div>
+
+<div class="row">
+    <div class="col-sm" style="text-align: left;margin-top: 10px;">
+        <p>Sommaire</p>
+
+        <p>le Lion et le bœuf</p>
+
+        
+        <p>la colombe à collier.</p>
+
+
+        <p>les Hiboux et les Corbeaux </p>
+
+
+        <p>le Singe et la tortue</p>
+
+
+        <p>l'Ermite et la Belette</p>
+
+
+        <p>le Rat et le chat</p>
+
+
+        <p>le Prince et l'Oiseau Fenzah </p>
+
+
+        <p>le Lion et le chacal qui était ermite</p>
+
+
+        <p>Iladh, Baladh et Erakht ;</p>
+
+
+        <p>la Lionne, le cavalier et le chacal</p>
+
+
+        <p>le Voyageur et l'orfèvre</p>
+        <p>le fils du Roi et ses compagnons</p>
+        <p>le Procès de Dimna</p>
+        <p>l'Ermite et l'invité</p>
+        <p>la Colombe, le renard et le héron</p>
+    </div>
+    <div class="col-sm">
+        <app-fr-content *ngIf="hadith" [hadith]="hadith"></app-fr-content>
+    </div>
+</div>
+
+</div>

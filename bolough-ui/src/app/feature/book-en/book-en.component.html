@@ -1,0 +1,29 @@
+<div class="container pt-5">
+    <div style="text-align: right;margin-top: 10px;">
+        <a routerLink="/ar" id="ar" (click)="changeLang($event)" >{{'arabic' | translate}}</a>
+        <a routerLink="/fr" id="fr" (click)="changeLang($event)">{{'french' | translate}}</a>
+    </div>
+
+    <p>Contents</p>
+<div class="row">
+    <div class="col-sm" style="text-align: left;margin-top: 10px;font-family: Akzidenz Roman, Helvetica, Arial, sans-serif;font-size: 14px;">
+        <p>The Author's Introduction</p>
+        <p>The Introduction of the Book</p>
+        <p>Chapter 1. The Lion and the Ox</p>
+            <a (click)="gethadith(1)">Chapter 2. Investigating Dimna</a>
+        <p>Chapter 3. The Ringdove </p>
+        <p>Chapter 4. The Owls and the Ravens</p>
+        <p>Chapter 5. The Monkey and the Male Turtle</p>
+        <p>Chapter 6. The Ascetic and the Weasel</p>
+        <p>Chapter 7. The Rat and the Cat</p>
+        <p>Chapter 8. The King and the Bird Fanza</p>
+        <p>Chapter 9. The Lioness, the Hunter and the Cougar</p>
+        <p>Chapter 10. Iladh, Biladh, and Irakht</p>  
+    </div>
+    <div class="col-sm">
+        <app-en-content *ngIf="hadith" [hadith]="hadith"></app-en-content>
+    </div>
+    
+</div>
+
+</div>

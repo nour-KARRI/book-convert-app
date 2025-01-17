@@ -1,0 +1,15 @@
+.register-success-text{
+    text-align: center;
+    margin-top: 5px;   
+    color: aliceblue;
+}
+
+@media (max-height: 800px) {
+    .post-form {
+     margin-bottom: 100px;
+    }
+  }
+
+.cannot-be-empty{
+    color: red;
+}

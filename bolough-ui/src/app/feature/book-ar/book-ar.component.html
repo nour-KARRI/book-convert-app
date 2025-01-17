@@ -1,0 +1,33 @@
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-sm" style="margin-top: 10px;">
+            <a routerLink="/add-content">{{'add' | translate}}</a>
+        </div>
+        <div class="col-sm" style="text-align: right;margin-top: 10px;">
+            <a routerLink="/fr" id="fr" (click)="changeLang($event)">{{ 'french' | translate}}</a>
+            <a routerLink="/en" id="en" (click)="changeLang($event)">{{ 'english' | translate}}</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <app-ar-content *ngIf="hadith" [hadith]="hadith"></app-ar-content>
+        </div>
+        <div class="col-sm" style="text-align: right;margin-top: 10px;">
+            <p style="text-align: center;font-size: 30px;">فصول الكتاب</p>
+            <a>مقدمة المؤلف</a>
+            <p>باب الأسد والثور</p>
+            <a (click)="gethadith(1)">باب الفحص عن أمر دمنة</a> 
+            <br>
+            <a (click)="gethadith(2)">باب الحمامة المطوقة</a>
+            <p>باب البوم والغربان</p>
+            <p>باب القرد والغيلم</p>
+            <p>باب الناسك وابن عرس</p>
+            <p>باب الجرذ والسنور</p>
+            <p>طهارة الهرة وسؤرها</p>
+            <p>طهارة الأرض إذا أصابتها نجاسةماء</p>
+            <p>حل الحوت والجراد والكبد والطحال</p>
+            <p>وقوع الذباب في الطعام والشراب</p>
+            <p>باب ابن الملك والطائر فنزة</p>   
+        </div> 
+    </div>
+</div>

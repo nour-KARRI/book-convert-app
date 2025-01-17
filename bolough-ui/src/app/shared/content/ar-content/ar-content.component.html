@@ -1,0 +1,29 @@
+<div class="container" style="text-align: right;margin-top: 100px;direction: rtl;">
+
+    <p>كِتَابُ الطَّهَارَةِ > بَابُ الْمِيَاهِ</p>
+    
+    <p>{{hadith.isnaad +" "}}<span [innerHTML]="hadith.matn"></span>{{" "+hadith.takhrij}}</p>
+
+    <ul>
+        <span style="color: #777;">ترجمة: </span>
+        <li>
+          <a (click)="getEnglishHadithTranslation(hadith.id)">انجليزي</a>
+        </li>
+        <li>
+          <a (click)="getFrenchHadithTranslation(hadith.id)">فرنسي</a>
+        </li>
+        <span style="color: #777;">شروح: </span>
+        
+        <li>
+          <a [href]="hadith.basamLink" target="_blank">البسام</a>
+        </li>
+        <li>
+          <a [href]="hadith.san3aniLink" target="_blank">الصنعاني</a>
+        </li>
+        <li>
+          <a [href]="hadith.uthaymeenLink" target="_blank">فيديو</a>
+        </li>
+      </ul>
+    <hr>
+    <p>{{hadith.hamesh}}</p> 
+</div>

@@ -1,0 +1,10 @@
+.title{
+    margin: 1em;
+    text-align: center;
+    font-family: Apple Chancery, cursive;
+    font-style: italic;
+    font-size: 2em;
+}
+.container{
+    background-color: #f3efe6;
+  }

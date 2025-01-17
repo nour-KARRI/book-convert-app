@@ -1,0 +1,9 @@
+a{
+    margin-left: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:active{
+  font-weight: bold;
+}
