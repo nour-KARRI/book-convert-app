@@ -1,4 +1,22 @@
-.logo{
+
+mat-form-field {
+  margin-top: 20px;
+ }
+
+a{
+  margin: 10px;
+}
+
+.flexExpand {
+  flex: 1 1 auto;
+}
+
+
+  i{
+  color: #04af2f;
+}
+  
+  .logo{
     text-decoration: none;
 }
 .icon-svg{
@@ -9,14 +27,4 @@
 
 img {
     border-radius: 50%;
-  }
-  input[type=text] {
-    border: 1px solid #04af2f;
-  }
-  i{
-    color: #04af2f;
-  }
-  #example-search-input{
-    color: #75b475;
-    background-color: #faf8f5;
   }

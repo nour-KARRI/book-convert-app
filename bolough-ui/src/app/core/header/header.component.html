@@ -1,35 +1,20 @@
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #e3f2fd;">
-    <div class="container-fluid">
-      <div class="flex-grow-1">
-        <a aria-label="Home" class="logo" routerLink="">
-            <img src="assets/img/boulough.jpg" width="40" height="40" priority>
-            <span class="reddit-text">
-              NourWsite
-            </span>
-        </a>
-    </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="">{{'home' | translate }}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/ar">{{'book' | translate}}</a>
-          </li>
-        </ul>
-        <div>
-          <a class="nav-link active me-2" aria-current="page" routerLink="">Login</a>
-        </div>
-        <form class="d-flex" role="search">
-            <div class="input-group">
-                <input class="form-control border-end-0 rounded-pill" type="text" id="example-search-input" placeholder="{{'search' | translate}}">
-                <span class="input-group-append">
-                    <button class="btn btn-outline-secondary bg-white border-start-0 rounded-pill" type="button" style="border: 1px solid #04af2f;">
-                        <i class="bi bi-search"></i>
-                    </button>
-                </span>
-         </div>
-        </form>
-      </div>
-    </div>
-  </nav>
+<mat-toolbar color="secondary">
+  <mat-toolbar-row>
+    <a aria-label="Home" class="logo" routerLink="">
+        <img src="assets/img/boulough.jpg" width="40" height="40" priority>
+        <span class="reddit-text">
+          NourWsite
+        </span>
+    </a>
+    <a class="nav-link active" aria-current="page" routerLink="">{{'home' | translate }}</a>
+    <a class="nav-link active" aria-current="page" routerLink="/ar">{{'book' | translate}}</a>
+    <span class="flexExpand"></span>
+    <a class="nav-link active" aria-current="page" routerLink="">Log in</a>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput type="text" placeholder="Search">
+      <mat-icon matPrefix>search</mat-icon>
+    </mat-form-field>
+  </mat-toolbar-row> 
+ </mat-toolbar>
