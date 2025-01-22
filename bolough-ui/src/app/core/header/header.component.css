@@ -15,7 +15,7 @@ a{
   i{
   color: #04af2f;
 }
-  
+
   .logo{
     text-decoration: none;
 }
@@ -27,4 +27,14 @@ a{
 
 img {
     border-radius: 50%;
+  }
+  input[type=text] {
+    border: 1px solid #04af2f;
+  }
+  i{
+    color: #04af2f;
+  }
+  #example-search-input{
+    color: #75b475;
+    background-color: #faf8f5;
   }
