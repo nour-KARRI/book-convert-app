@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { HadithTranslationRequestPayload } from '../../../shared/add-content/content.request.payload';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { HadithTranslation } from '../../../core/models/hadithtranslation.model';
 
 @Component({
   selector: 'app-en-content',
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './en-content.component.css'
 })
 export class EnContentComponent {
-  @Input() hadith: HadithTranslationRequestPayload;
+  @Input() hadith!: HadithTranslation;
 
   constructor(private router: Router){
   }

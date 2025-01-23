@@ -6,6 +6,7 @@ import { FrContentComponent } from './content/fr-content/fr-content.component';
 import { EnContentComponent } from './content/en-content/en-content.component';
 import { ArContentComponent } from './content/ar-content/ar-content.component';
 import { MaterialComponent } from './material/material.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MaterialComponent } from './material/material.component';
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    ReactiveFormsModule
   ],
   exports:[
     FrContentComponent,

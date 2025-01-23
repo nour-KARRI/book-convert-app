@@ -1,4 +1,15 @@
 <div class="container overflow-auto pt-5">
+    <h2 style="text-align: center;">Add new Content</h2>
+
+        <mat-form-field>
+            <mat-label>lang</mat-label>
+            <select matNativeControl required>
+                <option value="en">English</option>
+                <option value="ar">Arabic</option>
+                <option value="fr">Franch</option>
+            </select>
+        </mat-form-field>
+
     <form [formGroup]="contentForm" class="post-form" (ngSubmit)="createContent()">
         <div style="margin-top: 50px;">
 

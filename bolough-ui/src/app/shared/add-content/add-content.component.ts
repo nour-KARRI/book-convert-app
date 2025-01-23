@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ChapterRequestPayload } from './content.request.payload';
 import { ContentService } from '../services/content.service';
+import { Hadith } from '../../core/models/hadith.model';
 
 @Component({
   selector: 'app-add-content',
@@ -11,24 +11,12 @@ import { ContentService } from '../services/content.service';
 })
 export class AddContentComponent implements OnInit{
   contentForm: FormGroup
-  contentPayload: ChapterRequestPayload
-  registerSuccessMessage: string
-  registerErreurMessage:string
+  createHadith!: Hadith
+  registerSuccessMessage: string = ""
+  registerErreurMessage:string = ""
   isError= false
   
-  constructor(private router: Router, private contentSrevice: ContentService){
-  
-    this.contentPayload = {
-      kitab:"",
-      chapter: "",
-      hadithName:"",
-      isnaad:"",
-      matn: "",
-      takhrij: "",
-      tahkeek: "",
-    }
-    this.registerSuccessMessage = ""
-    this.registerErreurMessage = ""
+  constructor(private router: Router, private contentSrevice: ContentService, private formBuilder: FormBuilder){
     
     this.contentForm = new FormGroup({
       kitab: new FormControl('', Validators.required),
@@ -41,19 +29,21 @@ export class AddContentComponent implements OnInit{
     })
   }
   
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+  }
   
   createContent(){
-    this.contentPayload.kitab =  this.contentForm.get('kitab')?.value;
-    this.contentPayload.chapter =  this.contentForm.get('chapter')?.value;
-    this.contentPayload.hadithName =  this.contentForm.get('hadithName')?.value;
-    this.contentPayload.isnaad = this.contentForm.get('isnaad')?.value;
+    this.createHadith.kitab =  this.contentForm.get('kitab')?.value;
+    this.createHadith.chapter =  this.contentForm.get('chapter')?.value;
+    this.createHadith.name =  this.contentForm.get('hadithName')?.value;
+    this.createHadith.isnaad = this.contentForm.get('isnaad')?.value;
 
-    this.contentPayload.matn = this.contentForm.get('matn')?.value;
-    this.contentPayload.takhrij = this.contentForm.get('takhrij')?.value;
-    this.contentPayload.tahkeek = this.contentForm.get('tahkeek')?.value;
+    this.createHadith.matn = this.contentForm.get('matn')?.value;
+    this.createHadith.takhrij = this.contentForm.get('takhrij')?.value;
+    this.createHadith.hamesh = this.contentForm.get('tahkeek')?.value;
   
-  this.contentSrevice.createContent(this.contentPayload).
+  this.contentSrevice.createContent(this.createHadith).
   subscribe(()=>{
     this.isError= true
     this.registerSuccessMessage = "Data successfully inserted in the database"
@@ -61,6 +51,8 @@ export class AddContentComponent implements OnInit{
     this.isError= false
     this.registerErreurMessage = "Data not saved";
   })
+  this.registerSuccessMessage = ""
+  this.registerErreurMessage = ""
   }
   
   discard(){

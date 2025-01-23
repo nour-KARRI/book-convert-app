@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { HadithRequestPayload } from '../../../shared/add-content/content.request.payload';
 import { Router } from '@angular/router';
+import { Hadith } from '../../../core/models/hadith.model';
 
 @Component({
   selector: 'app-ar-content',
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './ar-content.component.css'
 })
 export class ArContentComponent {
-  @Input() hadith: HadithRequestPayload;
+  @Input() hadith!: Hadith;
 
   constructor(private router: Router){}
 

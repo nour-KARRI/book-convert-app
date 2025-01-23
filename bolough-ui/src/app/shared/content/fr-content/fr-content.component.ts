@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { HadithTranslationRequestPayload } from '../../../shared/add-content/content.request.payload';
 import { Router } from '@angular/router';
+import { HadithTranslation } from '../../../core/models/hadithtranslation.model';
 
 @Component({
   selector: 'app-fr-content',
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class FrContentComponent {
 
-  @Input() hadith: HadithTranslationRequestPayload;
+  @Input() hadith!: HadithTranslation;
 
   constructor(private router: Router){
   }

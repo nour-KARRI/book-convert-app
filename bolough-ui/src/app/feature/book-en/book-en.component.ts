@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ContentService } from '../../shared/services/content.service';
-import { HadithTranslationRequestPayload } from '../../shared/add-content/content.request.payload';
 import { throwError } from 'rxjs';
+import { HadithTranslation } from '../../core/models/hadithtranslation.model';
 
 
 interface Locale {
@@ -17,7 +17,7 @@ interface Locale {
 })
 export class BookEnComponent implements OnInit{
 
-  hadith: HadithTranslationRequestPayload;
+  hadith!: HadithTranslation;
   
   constructor(private translate: TranslateService, 
     private contentService: ContentService){
