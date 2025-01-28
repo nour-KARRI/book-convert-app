@@ -1,86 +1,91 @@
-<div class="container overflow-auto pt-5">
-    <h2 style="text-align: center;">Add new Content</h2>
-
-        <mat-form-field>
+<mat-card class="main-form" [formGroup]="mainForm">
+    <mat-card-title class="add-content">Add Content</mat-card-title>
+    
+    <mat-card class="form-card">
+       <mat-form-field>
             <mat-label>lang</mat-label>
-            <select matNativeControl required>
-                <option value="en">English</option>
-                <option value="ar">Arabic</option>
-                <option value="fr">Franch</option>
-            </select>
+            <mat-select matNativeControl required [formControl]="langCtrl">
+                <mat-option></mat-option>
+                <mat-option value="en">English</mat-option>
+                <mat-option value="ar">Arabic</mat-option>
+                <mat-option value="fr">Franch</mat-option>
+            </mat-select>
         </mat-form-field>
+    </mat-card>
 
-    <form [formGroup]="contentForm" class="post-form" (ngSubmit)="createContent()">
-        <div style="margin-top: 50px;">
+    <mat-card class="form-card">
+        <mat-card-subtitle></mat-card-subtitle>
+        <div class="form-row">
+            <mat-form-field appearance="fill" class="mat-form-field-style">
+                <mat-label>Kitab</mat-label>
+                <input matInput type="text" placeholder="kitab" [formControl]="kitabCtrl">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="mat-form-field-style">
+                <mat-label>Chapter</mat-label>
+                <input matInput type="text" placeholder="Chapter" [formControl]="chapterCtrl">     
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="mat-form-field-style">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" placeholder="name" [formControl]="nameCtrl">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="mat-form-field-style">
+                <mat-label>Isnaad</mat-label>
+                <input matInput type="text" placeholder="isnaad" [formControl]="isnaadCtrl">     
+            </mat-form-field>
+        </div>
+    </mat-card>
 
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <b for="title">Kitab</b>
-                    <input type="text" class="form-control" id="kitab" placeholder="Kitab" [formControlName]="'kitab'"  required/>
-                    <span *ngIf="!contentForm.get('kitab')!.valid && contentForm.get('kitab')!.touched">
-                        <span class="cannot-be-empty">Kitab cannot be empty</span> 
-                    </span>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <b for="title">Chapter</b>
-                    <input type="text" class="form-control" id="chapter" placeholder="Chapter" [formControlName]="'chapter'"  required/>
-                    <span *ngIf="!contentForm.get('chapter')!.valid && contentForm.get('chapter')!.touched">
-                        <span class="cannot-be-empty">Chapter cannot be empty</span> 
-                    </span>
-                </div> 
-             </div>
-            <div class="row">
-               <div class=" col-md-6 mb-3">
-                    <b for="content">hadithName</b>
-                    <textarea type="text" class="form-control" [formControlName]="'hadithName'" placeholder="HadithName"></textarea>
-                    <span *ngIf="!contentForm.get('hadithName')!.valid && contentForm.get('hadithName')!.touched">
-                        <span class="cannot-be-empty">HadithName cannot be empty</span>
-                    </span>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <b for="content">Isnaad</b>
-                    <textarea type="text" class="form-control" [formControlName]="'isnaad'" placeholder="Isnaad"></textarea>
-                    <span *ngIf="!contentForm.get('isnaad')!.valid && contentForm.get('isnaad')!.touched">
-                        <span class="cannot-be-empty">Isnaad cannot be empty</span>
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <b for="content">Matn</b>
-                    <textarea type="text" class="form-control" [formControlName]="'matn'" placeholder="Matn"></textarea>
-                    <span *ngIf="!contentForm.get('matn')!.valid && contentForm.get('matn')!.touched">
-                        <span class="cannot-be-empty">Matn cannot be empty</span>
-                </span>
-                </div> 
-            
-                <div class="col-md-6 mb-3">
-                    <b for="content">Takhrij</b>
-                    <textarea type="text" class="form-control" [formControlName]="'takhrij'" placeholder="Takhrij"></textarea>
-                    <span *ngIf="!contentForm.get('takhrij')!.valid && contentForm.get('takhrij')!.touched">
-                        <span class="cannot-be-empty">Takhrij cannot be empty</span>
-                    </span>
-                </div>
-            </div>
-                <div class="mb-3">
-                    <b for="content">Tahkeek</b>
-                    <textarea type="text" class="form-control" [formControlName]="'tahkeek'" placeholder="Tahkeek"></textarea>
-                    <span *ngIf="!contentForm.get('tahkeek')!.valid && contentForm.get('tahkeek')!.touched">
-                        <span class="cannot-be-empty">Tahkeek cannot be empty</span>
-                    </span>
-                </div>
+    <mat-card class="form-card">
+        <mat-card-subtitle></mat-card-subtitle>
+        <div class="form-row">
+            <mat-form-field appearance="fill" class="mat-form-field-style">
+                <mat-label>Matn</mat-label>
+                <input matInput type="text" placeholder="Matn" [formControl]="matnCtrl">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="mat-form-field-style">
+                <mat-label>Takhrij</mat-label>
+                <input matInput type="text" placeholder="Takhrij" [formControl]="takhrijCtrl">     
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="mat-form-field-style">
+                <mat-label>Tahkeek</mat-label>
+                <input matInput type="text" placeholder="tahkeek" [formControl]="hameshCtrl">
+            </mat-form-field>
         </div>
-        <div class="insert-failed col-md-4" [ngStyle]="{'background-color': 'green'}" *ngIf="this.registerSuccessMessage.length > 0">
-            <p class="register-success-text">{{registerSuccessMessage}}</p>
-        </div>
-        <div class="insert-failed col-md-2" [ngStyle]="{'background-color': 'orange'}" *ngIf="this.registerErreurMessage.length > 0">
-            <p class="register-success-text">{{registerErreurMessage}}</p>
-        </div>
+    </mat-card>
 
-        <div class="text-center">
-          <button (click)="discard()" class="btn btn-outline-warning float-end">Discard</button>
-          <button type="submit" class="btn btn-primary" [disabled]="contentForm.invalid">Submit</button>  
+    <mat-card class="form-card">
+        <mat-card-subtitle></mat-card-subtitle>
+        <div class="form-row">
+            <mat-form-field appearance="fill" class="mat-form-field-style">
+                <mat-label>Link1</mat-label>
+                <input matInput type="text" placeholder="Link bas" [formControl]="basamLinkCtrl">     
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="mat-form-field-style">
+                <mat-label>Link2</mat-label>
+                <input matInput type="text" placeholder="Link san" [formControl]="san3aniLinkCtrl">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="mat-form-field-style">
+                <mat-label>Link3</mat-label>
+                <input matInput type="text" placeholder="Link outh" [formControl]="youtubeLinkCtrl">     
+            </mat-form-field>  
         </div>
-    </form>
-</div>
+    </mat-card>
+
+    <mat-card-actions>
+        <button color="primary" class="btn-save" mat-raised-button color="primary" (click)="onCreateContent(mainForm)" [disabled]="mainForm.invalid">SAVE</button>
+        <button mat-flat-button 
+                color="primary" 
+                class="btn-discard"
+                matTooltip="Redirect to book page" 
+                color="warn" (click)="onDiscard()">Discard</button>
+    </mat-card-actions>
+
+    <div *ngIf="showMessage">
+        <p class="register-success-text" class="success-msg">{{registerSuccessMessage}}</p>
+    </div>
+    <div *ngIf="showMessage">
+        <p class="fail-msg">{{registerErreurMessage}}</p>
+    </div>
+
+</mat-card>
 

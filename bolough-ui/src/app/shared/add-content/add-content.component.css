@@ -1,15 +1,50 @@
-.register-success-text{
-    text-align: center;
-    margin-top: 5px;   
-    color: aliceblue;
+
+.main-form{
+    width: 70%;
+    margin: auto;
+    padding-bottom: 80px;
 }
 
-@media (max-height: 800px) {
-    .post-form {
-     margin-bottom: 100px;
-    }
+mat-form-field {
+    width: 24%;
+    margin: 5px;
   }
 
-.cannot-be-empty{
-    color: red;
+.add-content{
+    margin: auto;
+    padding: 10px;
+    font-size: xx-large;
+}
+
+.form-card {
+    margin: 5px;
+}
+
+
+mat-card-actions{
+    margin-top: 10px;
+}
+
+
+.btn-save{
+    margin: auto;
+}
+
+.success-msg{
+    color: #fff !important;
+    background-color: #4CAF50 !important;
+
+}
+
+.fail-msg{
+    color: #fff !important;
+    background-color: #f44336 !important;
+}
+
+p{
+    width: 25%;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
 }
